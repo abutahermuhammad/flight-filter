@@ -1,6 +1,4 @@
 const moment = require("moment/moment");
-const data = require('./data.json');  // Flight data
-
 
 /**
  * Returns an object containing airlines with their corresponding IATA codes and names.
@@ -37,12 +35,6 @@ function isDurationLessThan(duration, toMatchWith) {
     // Compare the durations by their milliseconds value
     return duration1.asMilliseconds() <= duration2.asMilliseconds();
 }
-// Example usage
-// const duration1 = 'P1DT4H30M';
-// const duration2 = 'PT7H10M';
-
-// const result = isDurationLessThan(duration1, duration2);
-// console.log(result);
 
 
 /**
@@ -94,16 +86,9 @@ function filterFlight(filter = { airline: "", duration: "", stops: null, price: 
     return filteredFlights;
 }
 
-const airlines = getAirlines(data);
-console.log(airlines);
 
-const filterOptions = {
-    airline: Object.keys(airlines)[4], // "LH"
-    duration: "PT20H",
-    stops: 1,
-    price: 1000
+module.exports = {
+    getAirlines,
+    isDurationLessThan,
+    filterFlight
 }
-
-console.log((filterFlight(filterOptions, data)).length);
-// filterFlight(filterOptions, data)
-

@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Abu Taher Muhammad <at-mah.vercel.app>",
   "license": "ISC",
   "dependencies": {
     "moment": "^2.29.4"
